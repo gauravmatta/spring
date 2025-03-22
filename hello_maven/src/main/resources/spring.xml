@@ -13,6 +13,8 @@
     <bean id="tyreSetter" class="com.springimplant.TyreSetter">
         <property name="brand" value="Bridgestone"/>
     </bean>
+    <bean id="nulltyreSetter" class="com.springimplant.TyreSetter">
+    </bean>
     <bean id="tyreConstructed" class="com.springimplant.TyreConstructor">
        <constructor-arg value="MRF"/>
     </bean>

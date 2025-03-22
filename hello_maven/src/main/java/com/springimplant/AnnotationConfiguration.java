@@ -15,5 +15,11 @@ public class AnnotationConfiguration {
         System.out.println(tyreSetter);
         TyreConstructor tyreConstructed = (TyreConstructor) context.getBean("tyreConstructed");
         System.out.println(tyreConstructed);
+
+        TyreSetter nullTyreSetter = (TyreSetter) context.getBean("nulltyreSetter");
+        System.out.println(nullTyreSetter);
+
+        AnnotatedCar car = (AnnotatedCar) context.getBean("annotatedCar");
+        car.drive();
     }
 }
