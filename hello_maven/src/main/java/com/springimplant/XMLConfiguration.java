@@ -3,11 +3,7 @@ package com.springimplant;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Hello world!
- *
- */
-public class App 
+public class XMLConfiguration
 {
     public static void main( String[] args )
     {
