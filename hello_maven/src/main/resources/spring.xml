@@ -10,4 +10,10 @@
 
     <context:component-scan base-package="com.springimplant"/>
     <bean id="vehicle" class="com.springimplant.Car"/>
+    <bean id="tyreSetter" class="com.springimplant.TyreSetter">
+        <property name="brand" value="Bridgestone"/>
+    </bean>
+    <bean id="tyreConstructed" class="com.springimplant.TyreConstructor">
+       <constructor-arg value="MRF"/>
+    </bean>
 </beans>
