@@ -18,27 +18,27 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Component("stu")
 public class Student {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "student_id")
-	private int studentId;
-	
-	@Value("Gaurav Matta")
-	@Column(name = "student_name")
-	private String studentName;
-	
-	@Value("19c")
-	@Column(name = "street_address")
-	private String streetAddress;
-	
-	@PostConstruct
-	public void start() {
-		System.out.println("Initializing Student "+this.studentName);
-	}
-	
-	@PreDestroy
-	public void end() {
-		System.out.println("Destroying Student "+this.studentName);
-	}
-	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "student_id")
+    private int studentId;
+
+    @Value("Gaurav Matta")
+    @Column(name = "student_name")
+    private String studentName;
+
+    @Value("19c")
+    @Column(name = "street_address")
+    private String streetAddress;
+
+    @PostConstruct
+    public void start() {
+        System.out.println("Initializing Student " + this.studentName);
+    }
+
+    @PreDestroy
+    public void end() {
+        System.out.println("Destroying Student " + this.studentName);
+    }
+
 }

@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-	
-	@Autowired
-	private UserDao userDao;
-	
-	public int createUser(User user) {
-		return this.userDao.saveUser(user);
-	}
+
+    @Autowired
+    private UserDao userDao;
+
+    public int createUser(User user) {
+        return this.userDao.saveUser(user);
+    }
 }

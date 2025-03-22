@@ -8,13 +8,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class UserDao {
-	
-	@Autowired
-	private HibernateTemplate hibernateTemplate; 
-	
-	@Transactional
-	public int saveUser(User user) {
-		return (Integer)this.hibernateTemplate.save(user);
-	}
+
+    @Autowired
+    private HibernateTemplate hibernateTemplate;
+
+    @Transactional
+    public int saveUser(User user) {
+        return (Integer) this.hibernateTemplate.save(user);
+    }
 
 }
