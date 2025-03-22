@@ -11,13 +11,13 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.Properties;
 
 @Configuration
-//@EnableWebMvc
-@ComponentScan(basePackages="com.springimplant.mvc")
 public class RestServiceConfiguration {
 	
 	@Bean(name="studentDao")
