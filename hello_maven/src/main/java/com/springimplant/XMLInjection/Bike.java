@@ -1,4 +1,4 @@
-package com.springimplant;
+package com.springimplant.XMLInjection;
 
 public class Bike implements Vehicle {
 

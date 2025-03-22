@@ -1,11 +1,13 @@
-package com.springimplant;
+package com.springimplant.annotatedInjection;
 
+import com.springimplant.XMLInjection.TyreSetter;
+import com.springimplant.XMLInjection.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AnnotatedCar implements Vehicle{
+public class AnnotatedCar implements Vehicle {
 
     @Autowired
     @Qualifier("tyreSetter")

@@ -1,5 +1,6 @@
 package com.springimplant;
 
+import com.springimplant.annotation.Samsung;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

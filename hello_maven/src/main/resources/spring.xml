@@ -9,13 +9,13 @@
        https://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="com.springimplant"/>
-    <bean id="vehicle" class="com.springimplant.Car"/>
-    <bean id="tyreSetter" class="com.springimplant.TyreSetter">
+    <bean id="vehicle" class="com.springimplant.XMLInjection.Car"/>
+    <bean id="tyreSetter" class="com.springimplant.XMLInjection.TyreSetter">
         <property name="brand" value="Bridgestone"/>
     </bean>
-    <bean id="nulltyreSetter" class="com.springimplant.TyreSetter">
+    <bean id="nulltyreSetter" class="com.springimplant.XMLInjection.TyreSetter">
     </bean>
-    <bean id="tyreConstructed" class="com.springimplant.TyreConstructor">
+    <bean id="tyreConstructed" class="com.springimplant.XMLInjection.TyreConstructor">
        <constructor-arg value="MRF"/>
     </bean>
 </beans>

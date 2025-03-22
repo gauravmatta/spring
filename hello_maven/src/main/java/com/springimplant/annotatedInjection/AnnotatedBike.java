@@ -1,5 +1,6 @@
-package com.springimplant;
+package com.springimplant.annotatedInjection;
 
+import com.springimplant.XMLInjection.Vehicle;
 import org.springframework.stereotype.Component;
 
 @Component

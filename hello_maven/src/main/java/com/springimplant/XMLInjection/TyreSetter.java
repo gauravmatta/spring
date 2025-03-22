@@ -1,11 +1,7 @@
-package com.springimplant;
+package com.springimplant.XMLInjection;
 
-public class TyreConstructor {
+public class TyreSetter {
     private String brand;
-
-    public TyreConstructor(String brand) {
-        this.brand = brand;
-    }
 
     public String getBrand() {
         return brand;

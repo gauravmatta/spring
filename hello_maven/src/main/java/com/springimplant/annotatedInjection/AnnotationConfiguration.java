@@ -1,5 +1,8 @@
-package com.springimplant;
+package com.springimplant.annotatedInjection;
 
+import com.springimplant.XMLInjection.TyreConstructor;
+import com.springimplant.XMLInjection.TyreSetter;
+import com.springimplant.XMLInjection.Vehicle;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

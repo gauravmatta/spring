@@ -1,12 +1,9 @@
-package com.springimplant;
+package com.springimplant.XMLInjection;
 
-import org.springframework.stereotype.Component;
-
-@Component
-public class AnnotatedTyre {
+public class TyreConstructor {
     private String brand;
 
-    public void setBrand(String brand) {
+    public TyreConstructor(String brand) {
         this.brand = brand;
     }
 
@@ -14,9 +11,13 @@ public class AnnotatedTyre {
         return brand;
     }
 
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
     @Override
     public String toString() {
-        return "AnnotatedTyre{" +
+        return "Tyre{" +
                 "brand='" + brand + '\'' +
                 '}';
     }
