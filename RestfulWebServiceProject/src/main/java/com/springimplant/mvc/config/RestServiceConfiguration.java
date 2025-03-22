@@ -1,7 +1,9 @@
 package com.springimplant.mvc.config;
 
-import java.util.Properties;
-
+import com.springimplant.mvc.dao.StudentDao;
+import com.springimplant.mvc.model.Account;
+import com.springimplant.mvc.model.Student;
+import com.springimplant.mvc.model.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,10 +12,7 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
-import com.springimplant.mvc.dao.StudentDao;
-import com.springimplant.mvc.model.Account;
-import com.springimplant.mvc.model.Student;
-import com.springimplant.mvc.model.User;
+import java.util.Properties;
 
 @Configuration
 //@EnableWebMvc
@@ -65,4 +64,6 @@ public class RestServiceConfiguration {
 		template.setSessionFactory(getFactoryBean().getObject());
 		return template;
 	}
+
+
 }

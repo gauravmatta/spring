@@ -1,7 +1,7 @@
 package com.springimplant.mvc.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
+import com.springimplant.mvc.model.User;
+import com.springimplant.mvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.springimplant.mvc.model.User;
-import com.springimplant.mvc.service.UserService;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class ContactController {

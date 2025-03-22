@@ -1,11 +1,10 @@
 package com.springimplant.mvc.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
+import com.springimplant.mvc.model.Student;
 import org.springframework.jdbc.core.RowMapper;
 
-import com.springimplant.mvc.model.Student;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class RowMapperImpl implements RowMapper<Student> {
 
