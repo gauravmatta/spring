@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.springimplant.mvc.service.AddService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +28,19 @@ public class HomeController {
 		friends.add("Akshay");
 		model.addAttribute("friends", friends);
 		return "home";
+	}
+
+	@RequestMapping("/add")
+	public ModelAndView add(HttpServletRequest request, HttpServletResponse response){
+		int i=Integer.parseInt(request.getParameter("t1"));
+		int j=Integer.parseInt(request.getParameter("t2"));
+		AddService addService = new AddService();
+		int k =addService.add(i,j);
+		System.out.println(k);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("display");
+		mv.addObject("result",k);
+		return mv;
 	}
 	
 	@GetMapping(value="/index")
