@@ -11,6 +11,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.Properties;
 
@@ -65,5 +66,11 @@ public class RestServiceConfiguration {
 		return template;
 	}
 
-
+	@Bean
+	public InternalResourceViewResolver viewResolver(){
+		InternalResourceViewResolver vr = new InternalResourceViewResolver();
+		vr.setPrefix("/WEB-INF/views/");
+		vr.setSuffix(".jsp");
+		return vr;
+	}
 }
