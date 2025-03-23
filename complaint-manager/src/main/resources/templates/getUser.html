@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Get User</title>
+</head>
+<body>
+GET By Id
+	<form action="get" method="post">
+		<input type="text" name="id">
+		<input type="submit">
+	</form>
+	Get By Tech
+	<form action="getbytech" method="post">
+		<input type="text" name="tech">
+		<input type="submit">
+	</form>
+	<p th:text="${users}" />
+	<p th:text="${usersgtThanId}" />
+	<p th:text="${usersSorted}" />
+</body>
+</html>
