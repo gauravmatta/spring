@@ -15,7 +15,7 @@ import lombok.ToString;
 @ToString
 public class Users {
 	@Id
-	private Integer id;
+	private int id;
 	
 	@Column(name="name")
 	private String name;

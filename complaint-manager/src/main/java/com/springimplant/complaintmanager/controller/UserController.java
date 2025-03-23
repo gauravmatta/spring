@@ -1,15 +1,19 @@
 package com.springimplant.complaintmanager.controller;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.springimplant.complaintmanager.dao.UsersRepository;
 import com.springimplant.complaintmanager.entities.Users;
 
@@ -57,6 +61,18 @@ public class UserController {
 	model.addAttribute("usersgtThanId", usersgtThanId);
 	model.addAttribute("usersSorted", usersSorted);
 	return "getUser";
+	}
+	
+	@GetMapping("/list")
+	@ResponseBody
+	public List<Users> getUsers() {
+		return usersRepository.findAll();
+	}
+	
+	@GetMapping("/get/{id}")
+	@ResponseBody
+	public Optional<Users> getUser(@PathVariable("id") int id) {
+		return usersRepository.findById(id);
 	}
 
 }
