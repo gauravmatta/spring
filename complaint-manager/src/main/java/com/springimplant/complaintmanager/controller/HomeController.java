@@ -22,8 +22,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.springimplant.complaintmanager.config.Utils;
 import com.springimplant.complaintmanager.dao.ComplaintDao;
 import com.springimplant.complaintmanager.entities.Complaint;
+import com.springimplant.complaintmanager.pojo.Alien;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 /**
@@ -47,16 +47,21 @@ public class HomeController {
 	
 	
    @GetMapping("/helloworld")
-   public ModelAndView helloWorld(HttpServletRequest request)
+   public String helloWorld(@RequestParam("name") String myName,HttpSession session,Model model)
    {
-	  String name = request.getParameter("name");
-	  System.out.println("Hello "+name);
-	  HttpSession session = request.getSession();
-	  session.setAttribute("name", name);
-	  ModelAndView mv = new ModelAndView();
-	  mv.setViewName("home");
-	  mv.addObject("name", name);
-	  return mv;
+	  System.out.println("Hello "+myName);
+	  session.setAttribute("name", myName);
+	  model.addAttribute("mname", myName);
+	  return "home";
+   }
+   
+   @GetMapping("/helloalien")
+   public String helloAlien(Alien alien,HttpSession session,Model model)
+   {
+	  System.out.println("Hello "+alien);
+	  session.setAttribute("name", alien);
+	  model.addAttribute("obj", alien);
+	  return "home";
    }
    
    @GetMapping("/fileComplaint")

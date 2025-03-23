@@ -3,9 +3,10 @@
 	<title>Home</title>
 </head>
 <body>
-${session.size()}
-<h1>
-	Hello ${name}  
-</h1>
+<h1 th:text="${session.name}"> Hello </h1>
+<p th:text="${mname}" />
+<p th:text="${obj.name}" />
+<p th:text="${obj.aid}" />
+<p th:text="${obj.tech}" />
 </body>
 </html>
