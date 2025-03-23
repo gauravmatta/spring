@@ -1,14 +1,8 @@
 package com.springimplant.complaintmanager.entities;
 
 
-
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
 @Table(name="complaints")

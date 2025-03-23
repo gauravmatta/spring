@@ -3,7 +3,9 @@ package com.springimplant.complaintmanager.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
+
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
@@ -16,7 +18,7 @@ public class SecurityConfig {
 						auth.requestMatchers("/").permitAll();
 						auth.anyRequest().authenticated();
 					})
-					.csrf(csrf->csrf.disable())
+					.csrf(AbstractHttpConfigurer::disable)
 					.logout(logout->logout.logoutSuccessUrl("/").permitAll())
 					.oauth2Login(withDefaults())
 					.formLogin(withDefaults())

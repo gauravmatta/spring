@@ -1,12 +1,10 @@
 package com.springimplant.complaintmanager.config;
 
+import com.springimplant.complaintmanager.filter.UniqueIdFilter;
+import lombok.Data;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.springimplant.complaintmanager.filter.UniqueIdFilter;
-
-import lombok.Data;
 
 @Configuration
 @Data

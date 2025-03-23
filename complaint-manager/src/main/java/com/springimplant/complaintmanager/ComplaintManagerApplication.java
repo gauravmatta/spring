@@ -1,5 +1,8 @@
 package com.springimplant.complaintmanager;
 
+import com.springimplant.complaintmanager.pojo.Alien;
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
+import io.micrometer.context.ContextRegistry;
 import org.slf4j.MDC;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,11 +10,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
-
-import com.springimplant.complaintmanager.pojo.Alien;
-import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
-
-import io.micrometer.context.ContextRegistry;
 import reactor.core.publisher.Hooks;
 
 @SpringBootApplication(scanBasePackages = "com.springimplant.complaintmanager")

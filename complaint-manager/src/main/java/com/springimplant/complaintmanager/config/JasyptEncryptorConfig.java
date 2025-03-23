@@ -1,10 +1,8 @@
 package com.springimplant.complaintmanager.config;
 
-import org.jasypt.digest.config.SimpleStringDigesterConfig;
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
 import org.jasypt.encryption.pbe.config.SimpleStringPBEConfig;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration

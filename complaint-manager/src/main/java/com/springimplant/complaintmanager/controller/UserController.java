@@ -1,24 +1,16 @@
 package com.springimplant.complaintmanager.controller;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.springimplant.complaintmanager.dao.UsersRepository;
 import com.springimplant.complaintmanager.entities.Users;
+import com.springimplant.complaintmanager.exception.UserNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Random;
 
 @Controller
 @RequestMapping("/users")
@@ -72,10 +64,11 @@ public class UserController {
 		return usersRepository.findAll();
 	}
 	
-	@GetMapping("/get/{id}")
+	@GetMapping(path="/get/{id}",produces = {"application/json"})
 	@ResponseBody
-	public Optional<Users> getUser(@PathVariable("id") int id) {
-		return usersRepository.findById(id);
+	public ResponseEntity<?> getUser(@PathVariable("id") int id) {
+			Users user = usersRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User Not Found with id: " + id));
+			return ResponseEntity.ok(user);
 	}
 	
 	@PostMapping(path="/adduser",consumes = {"application/json"})
@@ -101,6 +94,5 @@ public class UserController {
 		usersRepository.save(user);
 		return user;
 	}
-	
-	
+
 }

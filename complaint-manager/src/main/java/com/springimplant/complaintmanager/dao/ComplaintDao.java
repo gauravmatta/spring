@@ -1,13 +1,12 @@
 package com.springimplant.complaintmanager.dao;
 
-import java.util.List;
-
+import com.springimplant.complaintmanager.entities.Complaint;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import com.springimplant.complaintmanager.entities.Complaint;
+import java.util.List;
 
 
 public class ComplaintDao {

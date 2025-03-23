@@ -1,11 +1,9 @@
 package com.springimplant.complaintmanager.service.impl;
 
+import com.springimplant.complaintmanager.service.MathService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
-import com.springimplant.complaintmanager.service.MathService;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Qualifier("MathServiceImpl")
