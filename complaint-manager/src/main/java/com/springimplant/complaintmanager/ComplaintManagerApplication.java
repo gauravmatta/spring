@@ -5,8 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
 
+import com.springimplant.complaintmanager.pojo.Alien;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
 import io.micrometer.context.ContextRegistry;
@@ -28,7 +30,10 @@ public class ComplaintManagerApplication extends SpringBootServletInitializer {
 				() -> MDC.get("cid"),
 				cid->MDC.put("cid",cid),
 				()->MDC.remove("cid"));
-		SpringApplication.run(ComplaintManagerApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(ComplaintManagerApplication.class, args);
+		Alien a = context.getBean(Alien.class);
+		System.out.println(a.toString());
+		a.show();
 	}
 
 }

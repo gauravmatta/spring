@@ -5,16 +5,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.security.config.Customizer.withDefaults;
+
 @Configuration
 public class SecurityConfig {
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) {
 		try {
-			return http
+			return http					
 					.authorizeHttpRequests(auth -> {
 						auth.requestMatchers("/").permitAll();
 						auth.anyRequest().authenticated();
 					})
+					.csrf(csrf->csrf.disable())
 					.logout(logout->logout.logoutSuccessUrl("/").permitAll())
 					.oauth2Login(withDefaults())
 					.formLogin(withDefaults())

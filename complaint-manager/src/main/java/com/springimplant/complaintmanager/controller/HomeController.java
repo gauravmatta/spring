@@ -23,6 +23,9 @@ import com.springimplant.complaintmanager.config.Utils;
 import com.springimplant.complaintmanager.dao.ComplaintDao;
 import com.springimplant.complaintmanager.entities.Complaint;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
 /**
  * Handles requests for the application home page.
  */
@@ -44,9 +47,16 @@ public class HomeController {
 	
 	
    @GetMapping("/helloworld")
-   public String helloWorld()
+   public ModelAndView helloWorld(HttpServletRequest request)
    {
-	   return "HelloWorld";
+	  String name = request.getParameter("name");
+	  System.out.println("Hello "+name);
+	  HttpSession session = request.getSession();
+	  session.setAttribute("name", name);
+	  ModelAndView mv = new ModelAndView();
+	  mv.setViewName("home");
+	  mv.addObject("name", name);
+	  return mv;
    }
    
    @GetMapping("/fileComplaint")
