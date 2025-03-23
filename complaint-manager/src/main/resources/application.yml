@@ -46,3 +46,8 @@ jasypt:
 flyway:
   baselineOnMigrate: true
   locations: classpath:db/migration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: beans,mappings,sessions,flyway
