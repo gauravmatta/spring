@@ -19,6 +19,8 @@ import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder
 import com.amazonaws.services.securitytoken.model.AssumeRoleRequest;
 import com.amazonaws.services.securitytoken.model.AssumeRoleResult;
 import com.amazonaws.services.securitytoken.model.Credentials;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 
 @SpringBootApplication
 public class AwsSqsDemoApplication {
@@ -27,6 +29,7 @@ public class AwsSqsDemoApplication {
 	
 	@PostConstruct
 	public void initAws() {
+		String bucketToDelete = "labstack-b83b31c4-bc39-4433-a657-ca7e20-lab1bucket-ln78cly5erx9";
 		String roleARNString = "arn:aws:iam::395527390279:role/av-sptm-console-role";
 		String roleSessionName = "Session_1";
 		Regions region = Regions.US_EAST_1;
