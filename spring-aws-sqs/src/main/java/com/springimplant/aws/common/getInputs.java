@@ -1,6 +1,5 @@
-package com.springimplant.aws.main;
+package com.springimplant.aws.common;
 
-import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,6 +27,15 @@ public class getInputs {
         String newObjectName = readProperties().getProperty("new_object_name");
         return newObjectName;
     }
+    public String getTableName() throws Exception {
+        String tableName = readProperties().getProperty("table_name");
+        return tableName;
+    }
+    public String getQueryUser() throws Exception {
+        String objectName = readProperties().getProperty("user_id");
+        return objectName;
+    }
+
     public static Properties readProperties() throws Exception {
         InputStream configFile = getInputs.class.getClassLoader().getResourceAsStream("config.properties");
         Properties properties = new Properties();

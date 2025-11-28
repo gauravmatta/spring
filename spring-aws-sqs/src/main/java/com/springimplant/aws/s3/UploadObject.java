@@ -1,5 +1,6 @@
-package com.springimplant.aws.main;
+package com.springimplant.aws.s3;
 
+import com.springimplant.aws.common.getInputs;
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.Region;

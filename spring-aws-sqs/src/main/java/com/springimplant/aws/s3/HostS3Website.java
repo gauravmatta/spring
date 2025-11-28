@@ -1,16 +1,10 @@
-package com.springimplant.aws.main;
+package com.springimplant.aws.s3;
 
-import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
+import com.springimplant.aws.common.getInputs;
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
-import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.*;
-
-import java.io.File;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
 
 public class HostS3Website {
 

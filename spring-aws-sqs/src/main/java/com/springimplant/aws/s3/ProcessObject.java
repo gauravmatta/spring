@@ -1,5 +1,6 @@
-package com.springimplant.aws.main;
+package com.springimplant.aws.s3;
 
+import com.springimplant.aws.common.getInputs;
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.databind.ObjectMapper;

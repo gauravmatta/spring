@@ -1,5 +1,6 @@
-package com.springimplant.aws.main;
+package com.springimplant.aws.s3;
 
+import com.springimplant.aws.common.getInputs;
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
 import software.amazon.awssdk.core.waiters.WaiterResponse;
@@ -13,7 +14,7 @@ import software.amazon.awssdk.services.s3.waiters.S3Waiter;
 
 public class CreateBucket {
 
-    static com.springimplant.aws.main.getInputs config = new getInputs();
+    static getInputs config = new getInputs();
 
     public static void main(String[] args) throws Exception {
 
