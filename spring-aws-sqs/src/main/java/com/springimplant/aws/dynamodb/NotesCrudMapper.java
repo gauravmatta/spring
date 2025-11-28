@@ -104,10 +104,10 @@ public class NotesCrudMapper {
         item.setNoteId(itemRetrieved.getNoteId());
         item.setNotes("free swag registration code " + ThreadLocalRandom.current().nextInt());
 
-        ArrayList<AttributeValue> list = new ArrayList<AttributeValue>();
+        ArrayList<AttributeValue> list = new ArrayList<>();
         list.add(new AttributeValue().withS(itemRetrieved.getNotes()));
 
-        Map<String, ExpectedAttributeValue> expectedAttributes = new HashMap<String, ExpectedAttributeValue>();
+        Map<String, ExpectedAttributeValue> expectedAttributes = new HashMap<>();
 
         ExpectedAttributeValue expectedAttributeValue = new ExpectedAttributeValue()
                 .withAttributeValueList(list)
