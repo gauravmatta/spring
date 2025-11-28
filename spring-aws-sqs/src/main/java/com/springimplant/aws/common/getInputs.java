@@ -35,6 +35,10 @@ public class getInputs {
         String objectName = readProperties().getProperty("user_id");
         return objectName;
     }
+    public String getSearchText() throws Exception {
+        String objectName = readProperties().getProperty("search_text");
+        return objectName;
+    }
 
     public static Properties readProperties() throws Exception {
         InputStream configFile = getInputs.class.getClassLoader().getResourceAsStream("config.properties");
