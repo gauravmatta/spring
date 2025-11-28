@@ -39,6 +39,15 @@ public class getInputs {
         String objectName = readProperties().getProperty("search_text");
         return objectName;
     }
+    public String getQueryNote() throws Exception {
+        String objectName = readProperties().getProperty("note_id");
+        return objectName;
+    }
+
+    public String getNewNote() throws Exception {
+        String objectName = readProperties().getProperty("new_note");
+        return objectName;
+    }
 
     public static Properties readProperties() throws Exception {
         InputStream configFile = getInputs.class.getClassLoader().getResourceAsStream("config.properties");
